@@ -1,0 +1,121 @@
+@use "./breakpoints" as *;
+@use "./colors" as *;
+
+$font-weight-regular: 400;
+$font-weight-demi: 600;
+$font-weight-bold: 700;
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../../Assets/Fonts/AvenirNextLTPro-Regular.otf) format("woff2");
+  font-weight: $font-weight-regular;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../../Assets/Fonts/AvenirNextLTPro-Demi.otf);
+  font-weight: $font-weight-demi;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../../Assets/Fonts/AvenirNextLTPro-Bold.otf);
+  font-weight: $font-weight-bold;
+  font-style: normal;
+}
+
+// Root
+
+@mixin root-font {
+  font-size: 16px;
+  color: $bandSite-black;
+  word-spacing: 1px;
+  font-family: "Avenir Next";
+}
+
+//Page Header
+
+@mixin page-header {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: $font-weight-bold;
+
+  @include tablet {
+    font-size: 60px;
+    line-height: 68px;
+    font-weight: $font-weight-bold;
+  }
+}
+
+//Section Header
+
+@mixin section-header {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: $font-weight-bold;
+
+  @include tablet {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: $font-weight-bold;
+  }
+}
+
+//Subheader
+
+@mixin subheader {
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: $font-weight-demi;
+
+  @include tablet {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: $font-weight-demi;
+  }
+}
+
+//Body Copy
+
+@mixin body-copy {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: $font-weight-regular;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: $font-weight-demi;
+  }
+}
+
+//Footer Copy
+
+@mixin footer-copy {
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: $font-weight-regular;
+
+  @include tablet {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: $font-weight-demi;
+  }
+}
+
+//Labels & Buttons
+
+@mixin labels-buttons {
+  font-size: 10px;
+  line-height: 20px;
+  font-weight: $font-weight-bold;
+
+  @include tablet {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: $font-weight-bold;
+  }
+}
+

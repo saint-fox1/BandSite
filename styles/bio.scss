@@ -1,0 +1,139 @@
+@use "./partials/breakpoints" as *;
+@use "./partials/font" as *;
+@use "./partials/colors" as *;
+
+@mixin pBot16 {
+  padding-bottom: 16px;
+}
+
+:root {
+  @include root-font;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.page-header {
+  @include page-header;
+}
+
+.section-header {
+  @include section-header;
+  @include pBot16;
+}
+
+.subheader {
+  @include subheader;
+}
+
+.body-copy {
+  @include body-copy;
+}
+
+.footer-copy {
+  @include body-copy;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+.website-logo {
+  box-sizing: content-box;
+  display: block;
+  font-weight: 100;
+  max-width: 120px;
+  max-height: 20px;
+  color: $white;
+  padding: 16px;
+
+  &--top {
+    margin: auto;
+  }
+}
+
+.nav-bar {
+  background-color: $bandSite-black;
+
+  &__container {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  &__link {
+    color: $mercury;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 5px solid transparent;
+
+    &:active {
+      color: $white;
+      border-color: $white;
+    }
+    &:hover {
+      color: $white;
+      border-color: $white;
+    }
+  }
+}
+
+.hero {
+  background-image: url("/Assets/Images/hero-bio.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 25vh;
+}
+
+.overlay {
+  background-color: #32323280;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 16px;
+  color: $white;
+}
+
+.about-section {
+  background-color: $white;
+  padding: 24px 16px;
+
+  &__img {
+    @include pBot16;
+  }
+
+  &__text {
+    @include pBot16;
+  }
+}
+
+.photo-gallery {
+  background-color: $alabaster;
+  padding: 24px 16px;
+
+  &__img {
+    @include pBot16;
+    display: block;
+  }
+}
+.footer {
+  background-color: $bandSite-black;
+  color: $white;
+  padding: 24px 16px;
+}
+
+.icon {
+  height: 25px;
+  width: 25px;
+  margin-bottom: 16px;
+}
