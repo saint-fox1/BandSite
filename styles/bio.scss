@@ -36,9 +36,9 @@ img {
     margin: auto;
     padding: 16px;
 
-    // @include tablet {
-    //   display: inline-block;
-    // }
+    @include desktop {
+      padding: 0;
+    }
   }
 
   &--bottom {
@@ -46,16 +46,19 @@ img {
   }
 }
 
-.nav-bar {
+.header {
   background-color: $bandSite-black;
+}
 
+.nav-bar {
   &__container {
     display: flex;
     justify-content: space-around;
     width: 100%;
 
-    a {
-      padding-bottom: 8px;
+    @include tablet {
+      justify-content: flex-start;
+      align-items: center;
     }
   }
 
@@ -65,9 +68,19 @@ img {
     width: 100%;
     text-align: center;
     border-bottom: 5px solid transparent;
+    padding-bottom: 8px;
+
+    @include tablet {
+      width: fit-content;
+      padding: 28px 0 18px 0;
+      margin: 0 48px;
+      border-width: 4px;
+    }
 
     &-text {
-      @include subheader;
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: $font-weight-demi;
     }
 
     &:active {
@@ -79,6 +92,16 @@ img {
       border-color: $white;
     }
   }
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+  }
+  @include desktop {
+    padding: 0;
+  }
+  @include container-desktop;
 }
 
 .hero {
@@ -101,6 +124,11 @@ img {
     @include page-header;
   }
 
+  &__container {
+    @include container-desktop;
+    width: 100%;
+  }
+
   @include tablet {
     height: 40vh;
   }
@@ -109,6 +137,7 @@ img {
 .about-section {
   background-color: $white;
   padding: 24px 16px 0 16px;
+  @include container-desktop;
 
   &__title {
     @include section-header;
@@ -158,8 +187,11 @@ img {
 
 .photo-gallery {
   background-color: $alabaster;
-  padding: 24px 16px 0 16px;
 
+  &__wrapper {
+    padding: 24px 16px 0 16px;
+    @include container-desktop;
+  }
   &__title {
     @include section-header;
     @include padding-bottom-16;
@@ -170,10 +202,14 @@ img {
     display: block;
   }
 }
+
 .footer {
   background-color: $bandSite-black;
-  color: $white;
-  padding: 24px 16px 16px 16px;
+  &__wrapper {
+    color: $white;
+    padding: 24px 16px 16px 16px;
+    @include container-desktop;
+  }
 
   &__title {
     @include section-header;
