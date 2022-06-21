@@ -17,9 +17,11 @@
         >
         <div class="nav-bar__container">
           <a href="#" class="nav-bar__link"
-            ><h3 class="subheader">Biography</h3></a
+            ><h3 class="nav-bar__link-text">Biography</h3></a
           >
-          <a href="#" class="nav-bar__link"><h3 class="subheader">Shows</h3></a>
+          <a href="#" class="nav-bar__link"
+            ><h3 class="nav-bar__link-text">Shows</h3></a
+          >
         </div>
       </nav>
     </header>
@@ -29,29 +31,29 @@
       <!-- Hero -->
 
       <div class="hero">
-        <div class="overlay">
-          <h1 class="page-header">The Bees Knees</h1>
+        <div class="hero__overlay">
+          <h1 class="hero__title">The Bees Knees</h1>
         </div>
       </div>
 
       <!-- About -->
 
       <section class="about-section">
-        <h2 class="section-header">About the Musicians</h2>
+        <h2 class="about-section__title">About the Musicians</h2>
         <img
           class="about-section__img"
           src="./Assets/Images/band.jpg"
           alt="Band"
         />
-        <p class="subheader about-section__text">
+        <p class="about-section__quote">
           "We push each other to be the best. It’s not uncommon for one of us to
           say ‘this needs to be better, back to the drawing board’”
         </p>
-        <p class="subheader about-section__text">
+        <p class="about-section__quote-author">
           - Bryan Teddy, lead vocalist of The Bees Knees
         </p>
-        <p class="subheader about-section__text">The Bees Knees</p>
-        <p class="body-copy about-section__text">
+        <p class="about-section__subheader">The Bees Knees</p>
+        <p class="about-section__text">
           The Bees Knees is a pop rock band originating from San Francisco,
           California. The band consists of lead vocalist Bryan Teddy, guitarist
           Mack Tolkens, guitarist Andrew Green, bassist Kent Zulkee and drummer
@@ -61,7 +63,7 @@
           Cat’s Meow), Adams was confident the band could succeed even further,
           pushing them to sign with Magenta Records.
         </p>
-        <p class="body-copy">
+        <p class="about-section__text">
           From there, the band has soared, gaining international recognition and
           ranking in the top 10 on the Poster Charts. New fans immediately fell
           in love with the band’s original and organic attitude, solidifying
@@ -77,7 +79,7 @@
       <!-- Photo Gallery -->
 
       <section class="photo-gallery">
-        <h2 class="section-header">Photo Gallery</h2>
+        <h2 class="photo-gallery__title">Photo Gallery</h2>
         <img
           class="photo-gallery__img"
           src="./Assets/Images/Photo-gallery-1.jpg"
@@ -129,63 +131,65 @@
     <!-- Footer -->
 
     <footer class="footer">
-      <h2 class="section-header">Get In Touch</h2>
+      <h2 class="footer__title">Get In Touch</h2>
       <a href="http://www.instagram.com"
         ><img
-          class="icon"
+          class="footer__icon footer__icon--instagram"
           src="./Assets/Icons/SVG/Icon-instagram.svg"
           alt="Instagram Icon"
       /></a>
       <a href="http://www.facebook.com"
         ><img
-          class="icon "
+          class="footer__icon footer__icon--facebook"
           src="./Assets/Icons/SVG/Icon-facebook.svg"
           alt="Facebook Icon"
       /></a>
       <a href="http://www.twitter.com"
         ><img
-          class="icon"
+          class="footer__icon footer__icon--twitter"
           src="./Assets/Icons/SVG/Icon-twitter.svg"
           alt="Twitter Icon"
       /></a>
-      <div>
-        <p class="subheader">
+      <div class="footer__contact-wrapper">
+        <p class="footer__contact-name">
           Cam Adams <br />
           The Bees Knees Management
         </p>
-        <p class="footer-copy">
+        <p class="footer__text">
           503 Broadway Penthouse, <br />
           New York, NY 10012, USA
         </p>
-        <p class="footer-copy">info@thebeesknees.com</p>
+        <p class="footer__text">info@thebeesknees.com</p>
       </div>
 
-      <div>
-        <p class="subheader">
+      <div class="footer__contact-wrapper">
+        <p class="footer__contact-name">
           Pearl Gregg <br />
           Limitless Artist Group
         </p>
-        <p class="footer-copy">
+        <p class="footer__text">
           Booking Agent for<br />
           US/ South America/ Japan
         </p>
-        <p class="footer-copy">pearl.gregg@limitlessag.com</p>
+        <p class="footer__text">pearl.gregg@limitlessag.com</p>
       </div>
 
-      <div>
-        <p class="subheader">
+      <div class="footer__contact-wrapper">
+        <p class="footer__contact-name">
           Carson Whyte <br />
           ARCH Entertainment
         </p>
-        <p class="footer-copy">
+        <p class="footer__text">
           Booking Agent for<br />
           UK / EU / AU
         </p>
-        <p class="footer-copy">cwhyte@archentertainment.com</p>
+        <p class="footer__text">cwhyte@archentertainment.com</p>
       </div>
 
-      <div><h1 class="website-logo">BANDSITE</h1></div>
-      <p class="footer-copy">
+      <a href="./index.html" class="website-logo website-logo--bottom"
+        >BANDSITE</a
+      >
+      <p class="footer__copyright">
         Copyright The Bees Knees © 2021 All Rights Reserved
       </p>
     </footer>
