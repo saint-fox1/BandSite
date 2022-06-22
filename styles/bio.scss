@@ -45,6 +45,15 @@ img {
 
   &--bottom {
     padding: 48px 16px 16px 0;
+
+    @include tablet {
+      position: absolute;
+      padding: 0;
+      top: 60px;
+      right: 36px;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
@@ -228,6 +237,7 @@ img {
 
     @include tablet {
       font-weight: $font-weight-demi;
+      padding-bottom: 24px;
     }
   }
 
@@ -244,36 +254,87 @@ img {
 
 .footer {
   background-color: $bandSite-black;
+
+  @include tablet {
+    position: relative;
+  }
+
+  &__all-contacts-wrapper {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
   &__wrapper {
     color: $white;
     padding: 24px 16px 16px 16px;
     @include container-desktop;
+
+    @include tablet {
+      padding: 48px 36px 36px 36px;
+    }
+  }
+  &__top-nav {
+    @include tablet {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-bottom: 36px;
+    }
   }
 
   &__title {
     @include section-header;
     @include padding-bottom-16;
-  }
 
-  &__contact-name {
-    @include subheader;
-    @include padding-bottom-16;
+    @include tablet {
+      display: inline-block;
+      font-weight: 600;
+    }
+  }
+  &__contact {
+    &-name {
+      @include subheader;
+      @include padding-bottom-16;
+
+      @include tablet {
+        font-size: 14px;
+        line-height: 22px;
+        padding-bottom: 24px;
+      }
+    }
   }
 
   &__text {
     @include footer-copy;
     @include padding-bottom-16;
+
+    @include tablet {
+      padding-bottom: 24px;
+    }
   }
 
   &__copyright {
     @include footer-copy;
     font-size: 11px;
+
+    @include tablet {
+      padding-top: 24px;
+    }
   }
 
   &__icon {
     height: 24px;
     width: 27px;
     margin-bottom: 16px;
+
+    &-wrapper {
+      @include tablet {
+        display: inline-block;
+        padding-left: 36px;
+      }
+    }
 
     &--instagram {
       margin-right: 8px;
