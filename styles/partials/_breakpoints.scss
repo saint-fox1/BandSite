@@ -1,6 +1,6 @@
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1280px;
-$page-margin: 48px;
+$page-margin: 63px;
 
 @mixin tablet {
   @media (min-width: $breakpoint-tablet) {

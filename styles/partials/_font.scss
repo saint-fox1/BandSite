@@ -45,7 +45,6 @@ $font-weight-bold: 700;
   @include tablet {
     font-size: 60px;
     line-height: 68px;
-    font-weight: $font-weight-bold;
   }
 }
 
@@ -59,7 +58,6 @@ $font-weight-bold: 700;
   @include tablet {
     font-size: 36px;
     line-height: 44px;
-    font-weight: $font-weight-bold;
   }
 }
 
@@ -73,7 +71,6 @@ $font-weight-bold: 700;
   @include tablet {
     font-size: 24px;
     line-height: 32px;
-    font-weight: $font-weight-demi;
   }
 }
 
@@ -87,7 +84,6 @@ $font-weight-bold: 700;
   @include tablet {
     font-size: 14px;
     line-height: 22px;
-    font-weight: $font-weight-demi;
   }
 }
 
@@ -101,7 +97,6 @@ $font-weight-bold: 700;
   @include tablet {
     font-size: 14px;
     line-height: 20px;
-    font-weight: $font-weight-demi;
   }
 }
 
@@ -115,7 +110,5 @@ $font-weight-bold: 700;
   @include tablet {
     font-size: 12px;
     line-height: 20px;
-    font-weight: $font-weight-bold;
   }
 }
-

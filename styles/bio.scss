@@ -25,12 +25,18 @@ img {
 
 .website-logo {
   box-sizing: content-box;
+  display: block;
   max-width: 120px;
   max-height: 20px;
 
   &--top {
     margin: auto;
     padding: 16px;
+
+    @include tablet {
+      width: 100%;
+      height: 100%;
+    }
 
     @include desktop {
       padding: 0;
@@ -118,6 +124,7 @@ img {
   }
   &__title {
     @include page-header;
+    font-weight: $font-weight-demi;
   }
 
   &__container {
@@ -126,7 +133,7 @@ img {
   }
 
   @include tablet {
-    height: 40vh;
+    height: 42vh;
   }
 }
 
@@ -135,18 +142,23 @@ img {
   padding: 24px 16px 0 16px;
   @include container-desktop;
 
+  @include tablet {
+    padding: 48px 36px 36px 36px;
+  }
+
   &__title {
     @include section-header;
-    padding-bottom: 8px;
+    font-weight: 600;
   }
 
   &__img {
-    @include padding-bottom-16;
+    padding: 8px 0 16px 0;
     height: 16.5vh;
+    display: block;
 
     @include tablet {
-      height: 30vh;
-      padding: 16px 56px 24px 56px;
+      height: 32.5vh;
+      padding: 16px 56px 0 56px;
     }
   }
 
@@ -154,21 +166,30 @@ img {
     @include subheader;
     @include padding-bottom-16;
 
+    @include tablet {
+      padding: 36px 56px 16px 56px;
+    }
+
     &-author {
       @include subheader;
-      @include padding-bottom-16;
+      padding: 0 0 24px 0;
 
       @include tablet {
-        @include subheader;
-        font-size: 20px;
+        font-size: 18px;
+        line-height: normal;
+        padding: 0 56px 48px 56px;
       }
     }
   }
 
   &__subheader {
     @include subheader;
-    padding: 8px 16px 16px 0;
+    @include padding-bottom-16;
     color: $bandSite-darkBlack;
+
+    @include tablet {
+      padding: 0 56px 48px 56px;
+    }
   }
 
   &__text {
@@ -176,7 +197,8 @@ img {
     @include padding-bottom-16;
 
     @include tablet {
-      padding: 48px 36px 0 36px;
+      padding: 0 56px;
+      column-count: 2;
     }
   }
 }
@@ -187,15 +209,36 @@ img {
   &__wrapper {
     padding: 24px 16px 0 16px;
     @include container-desktop;
+
+    @include tablet {
+      padding: 48px 36px 16px 36px;
+    }
+  }
+
+  &__grid {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
   }
   &__title {
     @include section-header;
     @include padding-bottom-16;
+
+    @include tablet {
+      font-weight: $font-weight-demi;
+    }
   }
 
   &__img {
     @include padding-bottom-16;
     display: block;
+
+    @include tablet {
+      width: calc(33.33% - 16px);
+      padding-bottom: 24px;
+    }
   }
 }
 
