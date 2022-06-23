@@ -52,6 +52,7 @@ img {
   .website-logo--top {
     width: 100%;
     height: 100%;
+    padding: 1rem 0 1rem 1rem;
   }
 }
 @media (min-width: 80rem) {
@@ -105,6 +106,11 @@ img {
   text-align: center;
   border-bottom: 0.3125rem solid transparent;
   padding-bottom: 0.5rem;
+  -webkit-transition: border-color 0.3s ease-out 100ms;
+  transition: border-color 0.3s ease-out 100ms;
+}
+.nav-bar__link:hover {
+  border-color: #ffffff;
 }
 @media (min-width: 48rem) {
   .nav-bar__link {
@@ -112,7 +118,7 @@ img {
     width: -moz-fit-content;
     width: fit-content;
     padding: 1.75rem 0 1.125rem 0;
-    margin: 0 3rem;
+    margin: 0 0 0 3rem;
     border-width: 0.25rem;
   }
 }
@@ -382,6 +388,16 @@ img {
 .photo-gallery__img {
   padding-bottom: 1rem;
   display: block;
+  -webkit-filter: grayscale(80%);
+          filter: grayscale(80%);
+  -webkit-transition: -webkit-filter 0.3s ease-out 100ms;
+  transition: -webkit-filter 0.3s ease-out 100ms;
+  transition: filter 0.3s ease-out 100ms;
+  transition: filter 0.3s ease-out 100ms, -webkit-filter 0.3s ease-out 100ms;
+}
+.photo-gallery__img:hover {
+  -webkit-filter: none;
+          filter: none;
 }
 @media (min-width: 48rem) {
   .photo-gallery__img {
