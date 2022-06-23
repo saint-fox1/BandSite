@@ -54,6 +54,8 @@ img {
       width: 100%;
       height: 100%;
     }
+    @include desktop {
+    }
   }
 }
 
@@ -179,6 +181,10 @@ img {
       padding: 36px 56px 16px 56px;
     }
 
+    @include desktop {
+      max-width: 78%;
+    }
+
     &-author {
       @include subheader;
       padding: 0 0 24px 0;
@@ -255,14 +261,14 @@ img {
 .footer {
   background-color: $bandSite-black;
 
-  @include tablet {
-    position: relative;
-  }
-
   &__all-contacts-wrapper {
     @include tablet {
       display: flex;
       justify-content: space-between;
+    }
+    @include desktop {
+      display: flex;
+      justify-content: flex-start;
     }
   }
 
@@ -270,6 +276,7 @@ img {
     color: $white;
     padding: 24px 16px 16px 16px;
     @include container-desktop;
+    position: relative;
 
     @include tablet {
       padding: 48px 36px 36px 36px;
@@ -294,6 +301,12 @@ img {
     }
   }
   &__contact {
+    &-wrapper {
+      @include desktop {
+        padding-right: 56px;
+      }
+    }
+
     &-name {
       @include subheader;
       @include padding-bottom-16;
