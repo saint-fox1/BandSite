@@ -3,7 +3,7 @@
 @use "./partials/colors" as *;
 
 @mixin padding-bottom-16 {
-  padding-bottom: 16px;
+  padding-bottom: 1rem;
 }
 
 :root {
@@ -26,12 +26,12 @@ img {
 .website-logo {
   box-sizing: content-box;
   display: block;
-  max-width: 120px;
-  max-height: 20px;
+  max-width: 7.5rem;
+  max-height: 1.25rem;
 
   &--top {
     margin: auto;
-    padding: 16px;
+    padding: 1rem;
 
     @include tablet {
       width: 100%;
@@ -44,13 +44,13 @@ img {
   }
 
   &--bottom {
-    padding: 48px 16px 16px 0;
+    padding: 3rem 1rem 1rem 0;
 
     @include tablet {
       position: absolute;
       padding: 0;
-      top: 60px;
-      right: 36px;
+      top: 3.75rem;
+      right: 2.25rem;
       width: 100%;
       height: 100%;
     }
@@ -64,6 +64,8 @@ img {
 }
 
 .nav-bar {
+  @include container-desktop;
+
   &__container {
     display: flex;
     justify-content: space-around;
@@ -80,19 +82,19 @@ img {
     display: inline-block;
     width: 100%;
     text-align: center;
-    border-bottom: 5px solid transparent;
-    padding-bottom: 8px;
+    border-bottom: 0.3125rem solid transparent;
+    padding-bottom: 0.5rem;
 
     @include tablet {
       width: fit-content;
-      padding: 28px 0 18px 0;
-      margin: 0 48px;
-      border-width: 4px;
+      padding: 1.75rem 0 1.125rem 0;
+      margin: 0 3rem;
+      border-width: 0.25rem;
     }
 
     &-text {
-      font-size: 14px;
-      line-height: 22px;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
       font-weight: $font-weight-demi;
     }
 
@@ -109,12 +111,11 @@ img {
   @include tablet {
     display: flex;
     align-items: center;
-    padding: 0 24px;
+    padding: 0 1.5rem;
   }
   @include desktop {
     padding: 0;
   }
-  @include container-desktop;
 }
 
 .hero {
@@ -130,8 +131,15 @@ img {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 16px;
+    padding: 1rem;
     color: $white;
+
+    @include tablet {
+      padding-left: 2.25rem;
+    }
+    @include desktop {
+      padding: 0;
+    }
   }
   &__title {
     @include page-header;
@@ -150,11 +158,15 @@ img {
 
 .about-section {
   background-color: $white;
-  padding: 24px 16px 0 16px;
+  padding: 1.5rem 1rem 0 1rem;
   @include container-desktop;
 
   @include tablet {
-    padding: 48px 36px 36px 36px;
+    padding: 3rem 2.25rem 2.25rem 2.25rem;
+  }
+  @include desktop {
+    padding-right: 0;
+    padding-left: 0;
   }
 
   &__title {
@@ -163,13 +175,13 @@ img {
   }
 
   &__img {
-    padding: 8px 0 16px 0;
+    padding: 0.5rem 0 1rem 0;
     height: 16.5vh;
     display: block;
 
     @include tablet {
       height: 32.5vh;
-      padding: 16px 56px 0 56px;
+      padding: 1.5rem 3.5rem 0 3.5rem;
     }
   }
 
@@ -178,7 +190,7 @@ img {
     @include padding-bottom-16;
 
     @include tablet {
-      padding: 36px 56px 16px 56px;
+      padding: 2.25rem 3.5rem 1rem 3.5rem;
     }
 
     @include desktop {
@@ -187,12 +199,12 @@ img {
 
     &-author {
       @include subheader;
-      padding: 0 0 24px 0;
+      padding: 0 0 1.5rem 0;
 
       @include tablet {
-        font-size: 18px;
+        font-size: 1.125rem;
         line-height: normal;
-        padding: 0 56px 48px 56px;
+        padding: 0 3.5rem 3rem 3.5rem;
       }
     }
   }
@@ -203,16 +215,21 @@ img {
     color: $bandSite-darkBlack;
 
     @include tablet {
-      padding: 0 56px 48px 56px;
+      padding: 0 3.5rem 3rem 3.5rem;
     }
   }
 
   &__text {
     @include body-copy;
     @include padding-bottom-16;
+    width: 100%;
 
     @include tablet {
-      padding: 0 56px;
+      padding: 0 3.5rem;
+      column-count: 2;
+    }
+    @include desktop {
+      padding: 0 3.5rem;
       column-count: 2;
     }
   }
@@ -222,11 +239,15 @@ img {
   background-color: $alabaster;
 
   &__wrapper {
-    padding: 24px 16px 0 16px;
+    padding: 1.5rem 1rem 0 1rem;
     @include container-desktop;
 
     @include tablet {
-      padding: 48px 36px 16px 36px;
+      padding: 3rem 2.25rem 1rem 2.25rem;
+    }
+    @include desktop {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
@@ -240,10 +261,10 @@ img {
   &__title {
     @include section-header;
     @include padding-bottom-16;
+    font-weight: $font-weight-demi;
 
     @include tablet {
-      font-weight: $font-weight-demi;
-      padding-bottom: 24px;
+      padding-bottom: 1.5rem;
     }
   }
 
@@ -252,8 +273,8 @@ img {
     display: block;
 
     @include tablet {
-      width: calc(33.33% - 16px);
-      padding-bottom: 24px;
+      width: calc(33.33% - 1rem);
+      padding-bottom: 1.5rem;
     }
   }
 }
@@ -274,26 +295,31 @@ img {
 
   &__wrapper {
     color: $white;
-    padding: 24px 16px 16px 16px;
+    padding: 1.5rem 1rem 1rem 1rem;
     @include container-desktop;
     position: relative;
 
     @include tablet {
-      padding: 48px 36px 36px 36px;
+      padding: 3rem 2.25rem 2.25rem 2.25rem;
     }
+    @include desktop {
+        padding-left: 0;
+        padding-right: 0;
+      }
   }
   &__top-nav {
     @include tablet {
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      padding-bottom: 36px;
+      padding-bottom: 2.25rem;
     }
   }
 
   &__title {
     @include section-header;
     @include padding-bottom-16;
+    font-weight: $font-weight-demi;
 
     @include tablet {
       display: inline-block;
@@ -303,7 +329,7 @@ img {
   &__contact {
     &-wrapper {
       @include desktop {
-        padding-right: 56px;
+        padding-right: 3.5rem;
       }
     }
 
@@ -312,9 +338,9 @@ img {
       @include padding-bottom-16;
 
       @include tablet {
-        font-size: 14px;
-        line-height: 22px;
-        padding-bottom: 24px;
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+        padding-bottom: 1.5rem;
       }
     }
   }
@@ -324,42 +350,42 @@ img {
     @include padding-bottom-16;
 
     @include tablet {
-      padding-bottom: 24px;
+      padding-bottom: 1.5rem;
     }
   }
 
   &__copyright {
     @include footer-copy;
-    font-size: 11px;
+    font-size: 0.6875rem;
 
     @include tablet {
-      padding-top: 24px;
+      padding-top: 1.5rem;
     }
   }
 
   &__icon {
-    height: 24px;
-    width: 27px;
-    margin-bottom: 16px;
+    height: 1.5rem;
+    width: 1.6875rem;
+    margin-bottom: 1rem;
 
     &-wrapper {
       @include tablet {
         display: inline-block;
-        padding-left: 36px;
+        padding-left: 2.25rem;
       }
     }
 
     &--instagram {
-      margin-right: 8px;
+      margin-right: 0.5rem;
     }
 
     &--facebook {
-      margin-right: 16px;
-      margin-left: 16px;
+      margin-right: 1rem;
+      margin-left: 1rem;
     }
 
     &--twitter {
-      margin-left: 8px;
+      margin-left: 0.5rem;
     }
   }
 }
