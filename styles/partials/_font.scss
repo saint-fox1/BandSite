@@ -1,0 +1,114 @@
+@use "./breakpoints" as *;
+@use "./colors" as *;
+
+$font-weight-regular: 400;
+$font-weight-demi: 600;
+$font-weight-bold: 700;
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../../Assets/Fonts/AvenirNextLTPro-Regular.otf) format("woff2");
+  font-weight: $font-weight-regular;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../../Assets/Fonts/AvenirNextLTPro-Demi.otf);
+  font-weight: $font-weight-demi;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir Next";
+  src: url(../../Assets/Fonts/AvenirNextLTPro-Bold.otf);
+  font-weight: $font-weight-bold;
+  font-style: normal;
+}
+
+// Root
+
+@mixin root-font {
+  font-size: 1rem;
+  color: $bandSite-black;
+  word-spacing: 0.0625rem;
+  font-family: "Avenir Next";
+}
+
+//Page Header
+
+@mixin page-header {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: $font-weight-bold;
+
+  @include tablet {
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+  }
+}
+
+//Section Header
+
+@mixin section-header {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: $font-weight-bold;
+
+  @include tablet {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+
+//Subheader
+
+@mixin subheader {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: $font-weight-demi;
+
+  @include tablet {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+//Body Copy
+
+@mixin body-copy {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: $font-weight-regular;
+
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+//Footer Copy
+
+@mixin footer-copy {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: $font-weight-regular;
+
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
+
+//Labels & Buttons
+
+@mixin labels-buttons {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: $font-weight-bold;
+
+  @include tablet {
+    font-size: 0.75rem;
+    line-height: 1.25rem;
+  }
+}
