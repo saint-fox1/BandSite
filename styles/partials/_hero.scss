@@ -3,39 +3,70 @@
 @use "./fonts" as *;
 
 .hero {
-  background-image: url("../../Assets/Images/hero-bio.jpg");
   background-size: cover;
   background-position: center;
-  height: 16.5vh;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem;
+  color: $white;
 
-  &__overlay {
-    background-color: #32323280;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 1rem;
-    color: $white;
-
-    @include tablet {
-      padding-left: 2.25rem;
-    }
-    @include desktop {
-      padding: 0;
-    }
+  @include tablet {
+    padding-left: 2.25rem;
   }
+  @include desktop {
+    padding: 0;
+  }
+
+  &--bio-page {
+    background-image: linear-gradient(#32323280, #32323280),
+      url("../../Assets/Images/hero-bio.jpg");
+    height: 16.5vh;
+  }
+  &--shows-page {
+    background-image: linear-gradient(#32323280, #32323280),
+      url("../../Assets/Images/hero-shows.jpg");
+  }
+
+  &__text {
+    margin: 1.5rem 0;
+  }
+
   &__title {
     @include page-header;
     font-weight: $font-weight-demi;
+    margin-bottom: 1rem;
+
   }
 
   &__container {
     @include container-desktop;
     width: 100%;
+    margin-bottom: 0.5rem;
+    margin-top: 0;
   }
 
   @include tablet {
     height: 42vh;
+  }
+
+  &__soundCloud-link {
+    border-radius: 5px;
+    @include tablet {
+      width:55%;
+    }
+    @include desktop {
+      display: inline-block;
+      width: 50%;
+      height:100%
+    }
+  }
+
+  &__content-wrapper {
+    @include desktop {
+      display: flex;
+    }
   }
 }

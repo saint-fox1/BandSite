@@ -1,0 +1,42 @@
+@use "./breakpoints" as *;
+@use "./colors" as *;
+@use "./fonts" as *;
+
+.shows-section {
+  background-color: $white;
+  padding: 1.5rem 1rem 0 1rem;
+  @include container-desktop;
+
+  @include tablet {
+    padding: 3rem 2.25rem 2.25rem 2.25rem;
+  }
+  @include desktop {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &__title {
+    @include section-header;
+    font-weight: 600;
+    color: $bandSite-darkBlack;
+    margin-bottom: 1rem;
+  }
+
+  &__show-details-wrapper {
+    padding-top: 1rem;
+  }
+
+  &__sub-title {
+    color: $silver;
+    font-size: 0.75rem;
+    margin-bottom: 0.625rem;
+  }
+
+  &__text {
+    margin-bottom: 1rem;
+  }
+
+  &__date {
+    font-weight: $font-weight-bold;
+  }
+}
