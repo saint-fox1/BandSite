@@ -1,0 +1,41 @@
+@use "./breakpoints" as *;
+@use "./colors" as *;
+@use "./fonts" as *;
+
+.hero {
+  background-image: url("../../Assets/Images/hero-bio.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 16.5vh;
+
+  &__overlay {
+    background-color: #32323280;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem;
+    color: $white;
+
+    @include tablet {
+      padding-left: 2.25rem;
+    }
+    @include desktop {
+      padding: 0;
+    }
+  }
+  &__title {
+    @include page-header;
+    font-weight: $font-weight-demi;
+  }
+
+  &__container {
+    @include container-desktop;
+    width: 100%;
+  }
+
+  @include tablet {
+    height: 42vh;
+  }
+}

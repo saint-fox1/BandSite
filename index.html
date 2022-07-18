@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>BandSite</title>
     <link rel="stylesheet" href="public/css/bio.css" />
   </head>
 
@@ -15,7 +15,7 @@
         <a href="./index.html" class="website-logo website-logo--top">
           <img
             class="website-logo"
-            src="./Assets/Logo/Logo-bandsite.svg"
+            src="./Assets/Logos/Logo-bandsite.svg"
             alt="website-logo"
         /></a>
         <div class="nav-bar__container">
@@ -135,6 +135,107 @@
           </div>
         </div>
       </section>
+
+      <!-- Comments Section -->
+
+      <!-- Form -->
+
+      <section class="comments-section">
+        <div class="comments-section__wrapper">
+          <h2 class="comments-section__title">Join the Conversation</h2>
+          <div class="comments-section__form-wrapper">
+            <div
+              class="comments-section__img--static comments-section__img"
+            ></div>
+            <form id="comment-form">
+              <label for="name-input" class="comments-section__label"
+                >NAME</label
+              >
+              <br />
+              <input
+                id="name-input"
+                class="comments-section__input-field"
+                type="text"
+                name="fullName"
+                placeholder="Enter your name"
+              />
+              <br />
+              <label for="comment-input" class="comments-section__label"
+                >COMMENT</label
+              >
+              <br />
+              <textarea
+                id="comment-input"
+                class="comments-section__input-field"
+                type="text"
+                name="comment"
+                placeholder="Add a new comment"
+              ></textarea>
+              <br />
+              <button type="submit" class="button">COMMENT</button>
+            </form>
+            <!-- <ul id="new-comment"></ul> -->
+          </div>
+
+          <!-- Added Comments -->
+          <div class="comments-section__added-comments">
+            <hr class="divider" />
+
+            <div class="comments-section__added-comment-wrapper">
+              <div class="comments-section__img"></div>
+              <div class="comments-section__added-comment-text-wrapper">
+                <div class="comments-section__comment-name-and-date-wrapper">
+                  <p class="comments-section__name-of-comment">Connor Walton</p>
+                  <p class="comments-section__date-of-comment">02/17/2021</p>
+                </div>
+                <p class="comments-section__text-of-comment">
+                  This is art. This is inexplicable magic expressed in the
+                  purest way, everything that makes up this majestic work
+                  deserves reverence. Let us appreciate this for what it is and
+                  what it contains.
+                </p>
+              </div>
+            </div>
+
+            <hr class="divider" />
+
+            <div class="comments-section__added-comment-wrapper">
+              <div class="comments-section__img"></div>
+              <div class="comments-section__added-comment-text-wrapper">
+                <div class="comments-section__comment-name-and-date-wrapper">
+                  <p class="comments-section__name-of-comment">Emilie Beach</p>
+                  <p class="comments-section__date-of-comment">01/09/2021</p>
+                </div>
+                <p class="comments-section__text-of-comment">
+                  I feel blessed to have seen them in person. What a show! They
+                  were just perfection. If there was one day of my life I could
+                  relive, this would be it. What an incredible day.
+                </p>
+              </div>
+            </div>
+
+            <hr class="divider" />
+
+            <div class="comments-section__added-comment-wrapper">
+              <div class="comments-section__img"></div>
+              <div class="comments-section__added-comment-text-wrapper">
+                <div class="comments-section__comment-name-and-date-wrapper">
+                  <p class="comments-section__name-of-comment">Miles Acosta</p>
+                  <p class="comments-section__date-of-comment">12/20/2020</p>
+                </div>
+                <p class="comments-section__text-of-comment">
+                  I can't stop listening. Every time I hear one of their songs -
+                  the vocals - it gives me goosebumps. Shivers straight down my
+                  spine. What a beautiful expression of creativity. Can't get
+                  enough.
+                </p>
+              </div>
+              
+            </div>
+            <hr class="divider" />
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
@@ -204,7 +305,7 @@
         <a href="./index.html" class="website-logo website-logo--bottom"
           ><img
             class="website-logo"
-            src="./Assets/Logo/Logo-bandsite.svg"
+            src="./Assets/Logos/Logo-bandsite.svg"
             alt="website-logo"
         /></a>
         <p class="footer__copyright">
@@ -212,5 +313,6 @@
         </p>
       </div>
     </footer>
+    <script src="./scripts/index-page.js"></script>
   </body>
 </html>

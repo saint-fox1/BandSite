@@ -1,0 +1,82 @@
+@use "./breakpoints" as *;
+@use "./colors" as *;
+@use "./fonts" as *;
+
+.about-section {
+    background-color: $white;
+    padding: 1.5rem 1rem 0 1rem;
+    @include container-desktop;
+  
+    @include tablet {
+      padding: 3rem 2.25rem 2.25rem 2.25rem;
+    }
+    @include desktop {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  
+    &__title {
+      @include section-header;
+      font-weight: 600;
+    }
+  
+    &__img {
+      padding: 0.5rem 0 1rem 0;
+      // height: 16.5vh;
+      display: block;
+  
+      @include tablet {
+        //   height: 32.5vh;
+        padding: 1.5rem 3.5rem 0 3.5rem;
+      }
+    }
+  
+    &__quote {
+      @include subheader;
+      padding-bottom: 1rem;
+  
+      @include tablet {
+        padding: 2.25rem 3.5rem 1rem 3.5rem;
+      }
+  
+      @include desktop {
+        max-width: 78%;
+      }
+  
+      &-author {
+        @include subheader;
+        padding: 0 0 1.5rem 0;
+  
+        @include tablet {
+          font-size: 1.125rem;
+          line-height: normal;
+          padding: 0 3.5rem 3rem 3.5rem;
+        }
+      }
+    }
+  
+    &__subheader {
+      @include subheader;
+      padding-bottom: 1rem;
+      color: $bandSite-darkBlack;
+  
+      @include tablet {
+        padding: 0 3.5rem 3rem 3.5rem;
+      }
+    }
+  
+    &__text {
+      @include body-copy;
+      padding-bottom: 1rem;
+      width: 100%;
+  
+      @include tablet {
+        padding: 0 3.5rem;
+        column-count: 2;
+      }
+      @include desktop {
+        padding: 0 3.5rem;
+        column-count: 2;
+      }
+    }
+  }
