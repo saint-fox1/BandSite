@@ -156,7 +156,7 @@
 }
 @media (min-width: 48rem) {
   .hero {
-    height: 42vh;
+    min-height: 42vh;
   }
 }
 .hero__soundCloud-link {
@@ -686,6 +686,9 @@
   display: -ms-flexbox;
   display: flex;
 }
+.comments-section__added-comment-text-wrapper {
+  width: 100%;
+}
 .comments-section__comment-name-and-date-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -757,9 +760,14 @@
     min-width: 9.375rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    width: 7.5rem;
-    float: right;
+    width: auto;
     font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 48rem) {
+  .comments-section__button {
+    float: right;
   }
 }
 

@@ -49,7 +49,7 @@
   }
 
   @include tablet {
-    height: 42vh;
+    min-height: 42vh;
   }
 
   &__soundCloud-link {

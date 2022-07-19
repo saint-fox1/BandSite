@@ -114,6 +114,10 @@
     display: flex;
   }
 
+  &__added-comment-text-wrapper {
+    width: 100%;
+  }
+
   &__comment-name-and-date-wrapper {
     display: flex;
     justify-content: space-between;

@@ -12,7 +12,7 @@
   <body>
     <header class="header">
       <nav class="nav-bar">
-        <a href="./index.html" class="website-logo website-logo--top">
+        <a href="/index.html" class="website-logo website-logo--top">
           <img
             class="website-logo"
             src="./Assets/Logos/Logo-bandsite.svg"
@@ -22,7 +22,7 @@
           <a href="#" class="nav-bar__link"
             ><h3 class="nav-bar__link-text">Biography</h3></a
           >
-          <a href="./pages/shows.html" class="nav-bar__link"
+          <a href="/pages/shows.html" class="nav-bar__link"
             ><h3 class="nav-bar__link-text">Shows</h3></a
           >
         </div>
@@ -145,7 +145,7 @@
             <div
               class="comments-section__img--static comments-section__img"
             ></div>
-            <form id="comment-form">
+            <form id="comment-form" onsubmit="return submitComment()">
               <label for="name-input" class="comments-section__label"
                 >NAME</label
               >
@@ -170,13 +170,15 @@
                 placeholder="Add a new comment"
               ></textarea>
               <br />
-              <button type="submit" class="button">COMMENT</button>
+              <button type="submit" class="button comments-section__button">
+                COMMENT
+              </button>
             </form>
             <!-- <ul id="new-comment"></ul> -->
           </div>
 
           <!-- Added Comments -->
-          <div class="comments-section__added-comments">
+          <div id="comments-container" class="comments-section__added-comments">
             <hr class="divider" />
 
             <div class="comments-section__added-comment-wrapper">
