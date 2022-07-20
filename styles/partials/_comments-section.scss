@@ -1,0 +1,152 @@
+@use "./breakpoints" as *;
+@use "./colors" as *;
+@use "./fonts" as *;
+
+.comments-section {
+  background-color: $white;
+
+  &__form-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+
+    @include tablet {
+      width: 85%;
+      margin: auto;
+    }
+
+    @include desktop {
+      max-width: ($breakpoint-desktop - $page-margin * 2)/2;
+      margin: auto;
+    }
+  }
+  &__wrapper {
+    padding: 1.5rem 1rem 0 1rem;
+    @include container-desktop;
+
+    @include tablet {
+      padding: 3rem 2.25rem 1rem 2.25rem;
+    }
+    @include desktop {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  &__title {
+    @include section-header;
+    padding-bottom: 1rem;
+    font-weight: $font-weight-demi;
+
+    @include tablet {
+      padding-bottom: 1.5rem;
+    }
+  }
+  &__img {
+    background-color: $mercury;
+    border-radius: 50%;
+    min-width: 2.25rem;
+    min-height: 2.25rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-right: 1rem;
+
+    @include tablet {
+      min-width: 3rem;
+      min-height: 3rem;
+      width: 3rem;
+      height: 3rem;
+    }
+
+    &--static {
+      background-image: url("../../Assets/Images/Mohan-muruge.jpg");
+      background-size: cover;
+      background-position: center;
+      margin-top: 1.5rem;
+    }
+  }
+
+  &__input-field {
+    background-color: $alabaster;
+    min-height: 2.25rem;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid $mercury;
+    padding: 0.75rem;
+    @include root-font;
+
+    @include tablet {
+      min-height: 3rem;
+      padding: 1rem;
+    }
+
+    &::placeholder {
+      color: $bandSite-black;
+    }
+
+    &:hover {
+      border-color: $bandSite-black;
+    }
+    &:invalid {
+      border-color: $error;
+    }
+  }
+
+  &__label {
+    color: $silver;
+    @include labels-buttons;
+    font-weight: $font-weight-demi;
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+  &__added-comments {
+    @include tablet {
+      width: 85%;
+      margin: auto;
+    }
+
+    @include desktop {
+      max-width: ($breakpoint-desktop - $page-margin * 2)/2;
+      margin: auto;
+    }
+  }
+  &__added-comment-wrapper {
+    display: flex;
+  }
+
+  &__added-comment-text-wrapper {
+    width: 100%;
+  }
+
+  &__comment-name-and-date-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  &__name-of-comment {
+    display: inline-block;
+    font-weight: $font-weight-demi;
+  }
+  &__date-of-comment {
+    display: inline-block;
+    color: $silver;
+  }
+  &__text-of-comment {
+    @include body-copy;
+  }
+}
+
+#comment-form {
+  width: 100%;
+}
+
+#name-input {
+  margin-bottom: 1.5rem;
+}
+
+#comment-input {
+  height: 6.25rem;
+  resize: none;
+  margin-bottom: 1rem;
+}

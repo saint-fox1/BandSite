@@ -1,0 +1,53 @@
+@use "./breakpoints" as *;
+@use "./colors" as *;
+@use "./fonts" as *;
+
+.photo-gallery {
+  background-color: $alabaster;
+
+  &__wrapper {
+    padding: 1.5rem 1rem 0 1rem;
+    @include container-desktop;
+
+    @include tablet {
+      padding: 3rem 2.25rem 1rem 2.25rem;
+    }
+    @include desktop {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__grid {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+  &__title {
+    @include section-header;
+    padding-bottom: 1rem;
+    font-weight: $font-weight-demi;
+
+    @include tablet {
+      padding-bottom: 1.5rem;
+    }
+  }
+
+  &__img {
+    padding-bottom: 1rem;
+    display: block;
+    filter: (grayscale(80%));
+    transition: filter 0.3s ease-out 100ms;
+
+    &:hover {
+      filter: none;
+    }
+
+    @include tablet {
+      width: calc(33.33% - 1rem);
+      padding-bottom: 1.5rem;
+    }
+  }
+}

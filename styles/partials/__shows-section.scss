@@ -1,0 +1,107 @@
+@use "./breakpoints" as *;
+@use "./colors" as *;
+@use "./fonts" as *;
+
+.shows-section {
+  background-color: $white;
+  padding: 1.5rem 0 1rem 0;
+  @include container-desktop;
+
+  @include tablet {
+    padding: 3rem 2.25rem 2.25rem 2.25rem;
+  }
+  @include desktop {
+    padding-right: 0;
+    padding-left: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__main-wrapper {
+    @include desktop {
+      width: 80%;
+      margin-top: 1rem;
+    }
+  }
+
+  &__table-header {
+    display: none;
+
+    @include tablet {
+      display: flex;
+      justify-content: flex-start;
+      padding: 0 1rem;
+
+      .shows-section__sub-title {
+        display: block;
+      }
+    }
+    @include desktop {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__details-container {
+    @include tablet {
+      width: 25%;
+    }
+  }
+
+  &__title {
+    @include section-header;
+    font-weight: 600;
+    color: $bandSite-darkBlack;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+
+    @include tablet {
+      margin-bottom: 2.25rem;
+    }
+  }
+
+  &__details-wrapper {
+    padding: 1rem;
+    border-bottom: 2px solid $mercury;
+    cursor: pointer;
+
+    @include tablet {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 1.5rem 1.125rem;
+    }
+
+    &:hover {
+      background-color: $alabaster;
+    }
+
+    &.active {
+      background-color: $mercury;
+    }
+  }
+
+  &__sub-title {
+    color: $silver;
+    font-size: 0.75rem;
+    margin-bottom: 0.625rem;
+    font-weight: $font-weight-demi;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__text {
+    margin-bottom: 1rem;
+    font-weight: $font-weight-demi;
+
+    @include tablet {
+      margin-bottom: 0;
+      font-weight: $font-weight-regular;
+    }
+  }
+
+  &__date {
+    font-weight: $font-weight-bold;
+  }
+}
