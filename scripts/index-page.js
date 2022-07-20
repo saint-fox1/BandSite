@@ -17,6 +17,7 @@ const commentData = [
 ];
 
 // Calculations from https://natclark.com/tutorials/javascript-relative-time/
+
 function getRelativeTime(oldDate) {
   console.log("old date", oldDate, Date.now());
   const now = Date.now();
@@ -124,6 +125,29 @@ function createComment(comment) {
   return commentWrapper;
 }
 
+// Creates a divider
+function createDivider() {
+  const divider = document.createElement("hr");
+  divider.classList.add("divider");
+  return divider;
+}
+
+// Rerender comments
+function reloadAllComments() {
+  const commentsContainer = document.getElementById("comments-container");
+
+  // clear container
+  commentsContainer.innerHTML = "";
+  commentsContainer.appendChild(createDivider());
+
+  //appends a comment and creates a divider
+  for (let i = 0; i < commentData.length; i++) {
+    const newComment = createComment(commentData[i]);
+    commentsContainer.appendChild(newComment);
+    commentsContainer.appendChild(createDivider());
+  }
+}
+
 // submitComment submits the form fields and reloads the comments on the page
 function submitComment() {
   const nameInput = document.getElementById("name-input");
@@ -136,8 +160,7 @@ function submitComment() {
     date: date,
   });
 
-  // rerender comments
-  loadAllComments();
+  reloadAllComments();
 
   // clear form
   nameInput.value = "";
@@ -147,27 +170,7 @@ function submitComment() {
   return false;
 }
 
-function createDivider() {
-  const divider = document.createElement("hr");
-  divider.classList.add("divider");
-  return divider;
-}
-
-function loadAllComments() {
-  const commentsContainer = document.getElementById("comments-container");
-
-  // clear container
-  commentsContainer.innerHTML = "";
-  commentsContainer.appendChild(createDivider());
-
-  for (let i = 0; i < commentData.length; i++) {
-    const newShow = createComment(commentData[i]);
-    commentsContainer.appendChild(newShow);
-    commentsContainer.appendChild(createDivider());
-  }
-}
-
-// onload populate page with data and attatch click listeners
-document.addEventListener("DOMContentLoaded", (event) => {
-  loadAllComments();
+// on load populate page with data and attatch click listeners
+document.addEventListener("DOMContentLoaded", () => {
+  reloadAllComments();
 });

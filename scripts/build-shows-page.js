@@ -1,4 +1,4 @@
-const initialShowData = [
+const showData = [
   {
     date: new Date("September 6, 2021"),
     venue: "Ronald Lane",
@@ -31,10 +31,7 @@ const initialShowData = [
   },
 ];
 
-// Hold the currently selected show row
-let selectedShowRow = null;
-
-/*  addShowRow adds a show row into the show section in the DOM
+/*  createShowRow builds a show row node and returns
     ex. HTML below:
 
     <div class="shows-section__details-wrapper">
@@ -117,7 +114,7 @@ function createShowRow(show) {
   locationContainer.classList.add("shows-section__details-container");
   buttonContainer.appendChild(buyTicketsButton);
 
-  // Add to DOM
+  // Generates final object
   const detailsWrapper = document.createElement("div");
   detailsWrapper.classList.add("shows-section__details-wrapper");
   detailsWrapper.appendChild(dateContainer);
@@ -128,7 +125,10 @@ function createShowRow(show) {
   return detailsWrapper;
 }
 
-// handleShowOnClick toggles the row between active and inactive highlighting
+// Hold the currently selected show row
+let selectedShowRow = null;
+
+// handleShowOnClick selects the row
 function handleShowOnClick(event) {
   if (selectedShowRow !== null) {
     selectedShowRow.classList.remove("active");
@@ -138,12 +138,12 @@ function handleShowOnClick(event) {
   selectedShowRow.classList.add("active");
 }
 
-// onload populate page with data and attatch click listeners
+// on page load add data and attatch click listeners
 document.addEventListener("DOMContentLoaded", (event) => {
   const showContainer = document.getElementById("shows-container");
 
-  for (let i = 0; i < initialShowData.length; i++) {
-    const newShow = createShowRow(initialShowData[i]);
+  for (let i = 0; i < showData.length; i++) {
+    const newShow = createShowRow(showData[i]);
     newShow.addEventListener("click", handleShowOnClick);
     showContainer.appendChild(newShow);
   }
