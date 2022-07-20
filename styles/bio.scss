@@ -65,4 +65,8 @@ img {
   background-color: $mercury;
   border: 1px solid $mercury;
   margin: 1rem 0 1rem 0;
+
+  @include tablet {
+    margin: 1.5rem 0;
+  }
 }

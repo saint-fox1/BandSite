@@ -32,6 +32,7 @@
 
   &__text {
     margin: 1.5rem 0;
+    @include subheader;
   }
 
   &__title {
@@ -39,6 +40,9 @@
     font-weight: $font-weight-demi;
     margin-bottom: 1rem;
 
+    @include desktop{
+        width:50%;
+    }
   }
 
   &__container {
@@ -55,18 +59,19 @@
   &__soundCloud-link {
     border-radius: 5px;
     @include tablet {
-      width:55%;
+      width: 55%;
     }
     @include desktop {
       display: inline-block;
-      width: 50%;
-      height:100%
+      width: 40%;
+      height: 100%;
     }
   }
 
   &__content-wrapper {
     @include desktop {
       display: flex;
+      justify-content: space-between;
     }
   }
 }

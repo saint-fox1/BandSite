@@ -4,7 +4,7 @@
 
 .shows-section {
   background-color: $white;
-  padding-top: 1.5rem;
+  padding: 1.5rem 0 1rem 0;
   @include container-desktop;
 
   @include tablet {
@@ -20,6 +20,7 @@
   &__main-wrapper {
     @include desktop {
       width: 80%;
+      margin-top: 1rem;
     }
   }
 
@@ -34,6 +35,9 @@
       .shows-section__sub-title {
         display: block;
       }
+    }
+    @include desktop {
+      margin-bottom: 1rem;
     }
   }
 
@@ -89,9 +93,11 @@
 
   &__text {
     margin-bottom: 1rem;
+    font-weight: $font-weight-demi;
 
     @include tablet {
       margin-bottom: 0;
+      font-weight: $font-weight-regular;
     }
   }
 
