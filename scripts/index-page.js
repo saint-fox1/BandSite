@@ -143,7 +143,6 @@ function reloadAllComments() {
 function submitComment() {
   const nameInput = document.getElementById("name-input");
   const commentInput = document.getElementById("comment-input");
-  const date = new Date();
 
   axios
     .post("https://project-1-api.herokuapp.com/comments?api_key=" + apiKey, {
@@ -167,9 +166,9 @@ function submitComment() {
 
 let apiKey;
 
-// on load it fetches api key and populate page with data
+// when HTML content is loaded, axios fetches api key and populate page with data
 document.addEventListener("DOMContentLoaded", () => {
-  axios // don't run further code until this is done
+  axios 
     .get("https://project-1-api.herokuapp.com/register")
     .then((result) => {
       apiKey = result.data["api_key"];
