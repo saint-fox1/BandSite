@@ -1,34 +1,15 @@
-const commentData = [
-  {
-    date: new Date("02/17/2021"),
-    name: "Connor Walton",
-    comment: `This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.`,
-  },
-  {
-    date: new Date("01/09/2021"),
-    name: "Emmilie Beach",
-    comment: `I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.`,
-  },
-  {
-    date: new Date("12/20/2020"),
-    name: "Miles Acosta",
-    comment: `I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.`,
-  },
-];
-
 // Calculations from https://natclark.com/tutorials/javascript-relative-time/
 
-function getRelativeTime(oldDate) {
-  console.log("old date", oldDate, Date.now());
+function getRelativeTime(timestamp) {
   const now = Date.now();
   const seconds = Math.floor(now / 1000);
-  const oldTimestamp = Math.floor(oldDate.getTime() / 1000);
+  const oldTimestamp = Math.floor(timestamp / 1000);
   const difference = seconds - oldTimestamp;
 
   let output = ``;
   let calc;
 
-  if (difference === 0) {
+  if (difference <= 30) {
     return "Just now";
   } else if (difference < 60) {
     // Less than a minute has passed:
@@ -66,6 +47,7 @@ function getRelativeTime(oldDate) {
 
 /*  createComment creates a new comment object
     ex. HTML below:
+    // I want to keep this comment so I can refer to it
  
     <div class="comments-section__added-comment-wrapper">
         <div class="comments-section__img"></div>
@@ -83,16 +65,17 @@ function getRelativeTime(oldDate) {
         </div>
     </div>
 */
+
 function createComment(comment) {
   // name
   const name = document.createElement("p");
   name.classList.add("comments-section__name-of-comment");
-  name.innerHTML = comment.name;
+  name.innerHTML = comment.name; // commentData.name
 
   // date
   const date = document.createElement("p");
   date.classList.add("comments-section__date-of-comment");
-  date.innerHTML = getRelativeTime(comment.date);
+  date.innerHTML = getRelativeTime(comment.timestamp);
 
   // comment
   const commentText = document.createElement("p");
@@ -134,43 +117,65 @@ function createDivider() {
 
 // Rerender comments
 function reloadAllComments() {
-  const commentsContainer = document.getElementById("comments-container");
+  axios
+    .get("https://project-1-api.herokuapp.com/comments?api_key=" + apiKey)
+    .then((result) => {
+      commentData = result.data;
+      const commentsContainer = document.getElementById("comments-container");
 
-  // clear container
-  commentsContainer.innerHTML = "";
-  commentsContainer.appendChild(createDivider());
+      // clear container
+      commentsContainer.innerHTML = "";
+      commentsContainer.appendChild(createDivider());
 
-  //appends a comment and creates a divider
-  for (let i = 0; i < commentData.length; i++) {
-    const newComment = createComment(commentData[i]);
-    commentsContainer.appendChild(newComment);
-    commentsContainer.appendChild(createDivider());
-  }
+      //appends a comment and creates a divider
+      for (let i = commentData.length - 1; i >= 0; i--) {
+        const newComment = createComment(commentData[i]);
+        commentsContainer.appendChild(newComment);
+        commentsContainer.appendChild(createDivider());
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 }
 
-// submitComment submits the form fields and reloads the comments on the page
+// submitComment submits the form fields and reloads the comments on the page // onsubmit inside the form hHTML
 function submitComment() {
   const nameInput = document.getElementById("name-input");
   const commentInput = document.getElementById("comment-input");
   const date = new Date();
 
-  commentData.unshift({
-    name: nameInput.value,
-    comment: commentInput.value,
-    date: date,
-  });
+  axios
+    .post("https://project-1-api.herokuapp.com/comments?api_key=" + apiKey, {
+      name: nameInput.value,
+      comment: commentInput.value,
+    })
+    .then(() => {
+      reloadAllComments();
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 
-  reloadAllComments();
-
-  // clear form
+  // clears the form
   nameInput.value = "";
   commentInput.value = "";
 
-  // prevent page reload
+  // prevent page reload - see html
   return false;
 }
 
-// on load populate page with data and attatch click listeners
+let apiKey;
+
+// on load it fetches api key and populate page with data
 document.addEventListener("DOMContentLoaded", () => {
-  reloadAllComments();
+  axios // don't run further code until this is done
+    .get("https://project-1-api.herokuapp.com/register")
+    .then((result) => {
+      apiKey = result.data["api_key"];
+      reloadAllComments();
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 });

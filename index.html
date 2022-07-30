@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BandSite</title>
     <link rel="stylesheet" href="public/css/bio.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
 
   <!-- Header -->
@@ -18,14 +19,14 @@
             src="./Assets/Logos/Logo-bandsite.svg"
             alt="website-logo"
         /></a>
-        <div class="nav-bar__container">
+        <nav class="nav-bar__container">
           <a href="#" class="nav-bar__link"
             ><h3 class="nav-bar__link-text">Biography</h3></a
           >
           <a href="/pages/shows.html" class="nav-bar__link"
             ><h3 class="nav-bar__link-text">Shows</h3></a
           >
-        </div>
+        </nav>
       </nav>
     </header>
 
@@ -178,61 +179,10 @@
           </div>
 
           <!-- Added Comments -->
-          <div id="comments-container" class="comments-section__added-comments">
-            <hr class="divider" />
-
-            <div class="comments-section__added-comment-wrapper">
-              <div class="comments-section__img"></div>
-              <div class="comments-section__added-comment-text-wrapper">
-                <div class="comments-section__comment-name-and-date-wrapper">
-                  <p class="comments-section__name-of-comment">Connor Walton</p>
-                  <p class="comments-section__date-of-comment">02/17/2021</p>
-                </div>
-                <p class="comments-section__text-of-comment">
-                  This is art. This is inexplicable magic expressed in the
-                  purest way, everything that makes up this majestic work
-                  deserves reverence. Let us appreciate this for what it is and
-                  what it contains.
-                </p>
-              </div>
-            </div>
-
-            <hr class="divider" />
-
-            <div class="comments-section__added-comment-wrapper">
-              <div class="comments-section__img"></div>
-              <div class="comments-section__added-comment-text-wrapper">
-                <div class="comments-section__comment-name-and-date-wrapper">
-                  <p class="comments-section__name-of-comment">Emilie Beach</p>
-                  <p class="comments-section__date-of-comment">01/09/2021</p>
-                </div>
-                <p class="comments-section__text-of-comment">
-                  I feel blessed to have seen them in person. What a show! They
-                  were just perfection. If there was one day of my life I could
-                  relive, this would be it. What an incredible day.
-                </p>
-              </div>
-            </div>
-
-            <hr class="divider" />
-
-            <div class="comments-section__added-comment-wrapper">
-              <div class="comments-section__img"></div>
-              <div class="comments-section__added-comment-text-wrapper">
-                <div class="comments-section__comment-name-and-date-wrapper">
-                  <p class="comments-section__name-of-comment">Miles Acosta</p>
-                  <p class="comments-section__date-of-comment">12/20/2020</p>
-                </div>
-                <p class="comments-section__text-of-comment">
-                  I can't stop listening. Every time I hear one of their songs -
-                  the vocals - it gives me goosebumps. Shivers straight down my
-                  spine. What a beautiful expression of creativity. Can't get
-                  enough.
-                </p>
-              </div>
-            </div>
-            <hr class="divider" />
-          </div>
+          <div
+            id="comments-container"
+            class="comments-section__added-comments"
+          ></div>
         </div>
       </section>
     </main>
