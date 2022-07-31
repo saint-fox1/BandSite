@@ -1,38 +1,8 @@
-const showData = [
-  {
-    date: new Date("September 6, 2021"),
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: new Date("Tue Sept 21 2021"),
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: new Date("Fri Oct 15 2021"),
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: new Date("Sat Nov 06 2021"),
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: new Date("Fri Nov 26 2021"),
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: new Date("Wed Dec 15 2021"),
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+
 
 /*  createShowRow builds a show row node and returns
     ex. HTML below:
+    // I would like to keep this comment for my reference
 
     <div class="shows-section__details-wrapper">
         <div class="shows-section__details-container">
@@ -61,7 +31,8 @@ const showData = [
     </div> 
 */
 function createShowRow(show) {
-  const formattedDate = show.date.toDateString();
+  const date = new Date(show.date / 1);
+  const formattedDate = date.toDateString();
 
   // Create Date Column
   const dateSubtitle = document.createElement("p");
@@ -84,7 +55,7 @@ function createShowRow(show) {
 
   const venueText = document.createElement("p");
   venueText.classList.add("shows-section__venue", "shows-section__text");
-  venueText.innerHTML = show.venue;
+  venueText.innerHTML = show.place;
 
   const venueContainer = document.createElement("div");
   venueContainer.classList.add("shows-section__details-container");
@@ -138,13 +109,35 @@ function handleShowOnClick(event) {
   selectedShowRow.classList.add("active");
 }
 
-// on page load add data and attatch click listeners
-document.addEventListener("DOMContentLoaded", (event) => {
-  const showContainer = document.getElementById("shows-container");
+// Step 1: register api key
 
-  for (let i = 0; i < showData.length; i++) {
-    const newShow = createShowRow(showData[i]);
-    newShow.addEventListener("click", handleShowOnClick);
-    showContainer.appendChild(newShow);
-  }
+let apiKey;
+
+document.addEventListener("DOMContentLoaded", (event) => {
+  axios
+    .get("https://project-1-api.herokuapp.com/register")
+    .then((result) => {
+      apiKey = result.data["api_key"];
+
+      // step 2: GET request and append show data
+
+      axios
+        .get("https://project-1-api.herokuapp.com/showdates?api_key=" + apiKey)
+        .then((result) => {
+          showData = result.data;
+          const showContainer = document.getElementById("shows-container");
+
+          for (let i = 0; i < showData.length; i++) {
+            const newShow = createShowRow(showData[i]);
+            newShow.addEventListener("click", handleShowOnClick);
+            showContainer.appendChild(newShow);
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 });
